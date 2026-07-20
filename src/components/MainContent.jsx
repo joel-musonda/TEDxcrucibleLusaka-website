@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import logoImg from '../assets/logo.png';
 import crucibleBuildingImg from '../assets/crucible.png';
+import bg from '../assets/bg.png'
 
 // --- Animation Variants for Scroll Reveals ---
 const sectionFadeIn = {
@@ -102,7 +103,7 @@ export default function MainContent({ onApplyClick }) {
       </section>
 
       {/* =========================================================
-          SECTION 2: CARDS (The Reaction Components)
+          SECTION 2: CARDS 
          ========================================================= */}
       <section className="min-h-screen flex items-center justify-center px-6 md:px-16 lg:px-24 max-w-7xl mx-auto py-24">
         <div className="w-full">
@@ -114,10 +115,10 @@ export default function MainContent({ onApplyClick }) {
             className="mb-12 text-left"
           >
             <span className="text-ted-red text-[10px] font-extrabold tracking-[0.3em] uppercase block mb-3">
-              CORE ELEMENTS
+              Our Pitch
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-              The Reaction Components
+              Why Give A Ted Talk?
             </h2>
           </motion.div>
 
@@ -135,9 +136,9 @@ export default function MainContent({ onApplyClick }) {
               className="md:col-span-7 bg-zinc-900/50 border border-zinc-800 p-8 flex flex-col justify-between min-h-[220px] transition-all duration-300"
             >
               <div>
-                <h3 className="text-xl font-bold mb-3">Localized Innovation</h3>
+                <h3 className="text-xl font-bold mb-3">Encourages critical thinking</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed font-normal">
-                  Bridging the structural gap between global technological shifts and Lusaka's unique cultural and socioeconomic landscape.
+                  The format of TedX Talks encourages critical thinking, as speakers are given limited time to present their ideas engagingly. This forces listeners to pay attention and to think critically about what is being said.
                 </p>
               </div>
             </motion.div>
@@ -155,9 +156,11 @@ export default function MainContent({ onApplyClick }) {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 18a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm-6-6a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Zm12 0a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-3">Intellectual Heat</h3>
+                <h3 className="text-xl font-bold mb-3">Helps develop public speaking skills</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed font-normal">
-                  Deep-dive talk sessions constructed explicitly to challenge comfortable parameters, spark debates, and expand horizons.
+              Listening and giving TEDx Talks can foster development of public speaking skills. By hearing how othr people deliver their ideas, one can learn how to structure their speeches and presentations.
+
+
                 </p>
               </div>
             </motion.div>
@@ -169,10 +172,10 @@ export default function MainContent({ onApplyClick }) {
               className="md:col-span-4 min-h-[220px] overflow-hidden bg-zinc-900 border border-zinc-800 relative group transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/80 to-transparent z-10 p-8 flex items-end">
-                <h3 className="text-xl font-bold">City Vitality</h3>
+                <h3 className="text-xl font-bold">Widens knowledge</h3>
               </div>
               <img 
-                src="/lusaka-skyline.jpg" 
+                src={bg}
                 alt="Lusaka urban backdrop" 
                 className="w-full h-full object-cover opacity-30 grayscale transition-all duration-500 group-hover:scale-105 group-hover:opacity-40 group-hover:grayscale-0"
                 onError={(e) => { e.target.style.display = 'none'; }}
@@ -244,7 +247,7 @@ export default function MainContent({ onApplyClick }) {
                 <span className="text-ted-red text-[10px] font-black tracking-wider uppercase block">
                   PHASE 02 — CURATORIAL INTERVIEW
                 </span>
-                <h3 className="text-xl font-bold">The Heat Auditions</h3>
+                <h3 className="text-xl font-bold">Outcome</h3>
                 <p className="text-zinc-400 text-sm max-w-2xl font-normal leading-relaxed">
                   Shortlisted visionaries are invited to sit down with the executive curatorial committee. You will deliver a concise 3-minute raw framework presentation followed by constructive scope Q&A.
                 </p>
@@ -260,7 +263,7 @@ export default function MainContent({ onApplyClick }) {
                 </span>
                 <h3 className="text-xl font-bold">Intensive Scripting Workshops</h3>
                 <p className="text-zinc-400 text-sm max-w-2xl font-normal leading-relaxed">
-                  Selected speakers enter the production phase. Work alongside veteran TEDx stage coaches to structure structural transitions, design visual slides, and polish theatrical delivery parameters.
+                  Selected speakers enter the production phase. Work alongside TEDx stage coaches to structure structural transitions, design visual slides, and polish theatrical delivery parameters.
                 </p>
               </div>
             </motion.div>
@@ -280,10 +283,10 @@ export default function MainContent({ onApplyClick }) {
           className="w-full space-y-10"
         >
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight">
-            Do You Have an Idea That Burns?
+            Do You Have an Idea?
           </h2>
           <p className="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
-            We are looking for the visionaries, the outliers, and the quiet observers who hold a perspective capable of changing how we see the world. Step into the Crucible.
+            We are looking for the visionaries, the outliers, and the quiet observers who hold a perspective capable of changing how we see the world. Give it a shot!.
           </p>
 
           <div className="bg-zinc-900/60 border border-zinc-800 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-zinc-800 max-w-3xl mx-auto shadow-xl p-4">

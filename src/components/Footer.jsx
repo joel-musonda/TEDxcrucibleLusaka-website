@@ -41,7 +41,7 @@ export default function Footer() {
           &copy; {currentYear} TEDxCrucibleLusaka. All rights reserved.
         </div>
         <div className="flex gap-2 items-center">
-          <span>Organized with structural focus in Lusaka, Zambia.</span>
+          <span>Organized by Students at Crucible Lusaka.</span>
         </div>
       </div>
     </footer>
