@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import logoImg from '../assets/logo.png';
+import crucibleBuildingImg from '../assets/crucible.png';
 
 // --- Animation Variants for Scroll Reveals ---
 const sectionFadeIn = {
@@ -38,7 +40,7 @@ const horizontalStepVariant = {
   }
 };
 
-export default function MainContent() {
+export default function MainContent({ onApplyClick }) {
   return (
     <div className="bg-black text-white selection:bg-ted-red selection:text-white overflow-hidden">
       
@@ -55,32 +57,35 @@ export default function MainContent() {
         >
           {/* Left Text Block */}
           <div className="w-full lg:w-1/2 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 p-8 md:p-12 relative group shadow-xl">
-            <div className="text-ted-red mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 animate-pulse">
-                <path d="M12 23c5.523 0 10-4.477 10-10 0-5.523-4.477-10-10-10S2 7.477 2 13c0 5.523 4.477 10 10 10Zm1-17.5a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l2.5 2.5a1 1 0 0 0 1.414-1.414L13 10.586V5.5Z" opacity="0.1" />
-                <path fillRule="evenodd" d="M12.945 3.559a1 1 0 0 0-1.89 0A9.43 9.43 0 0 0 5.483 8.9c-.2.724-.593 1.383-1.127 1.88a1 1 0 0 0-.25 1.154 9.924 9.924 0 0 0 6.64 6.027 1 1 0 0 0 1.258-.788l.582-2.909a3 3 0 0 1 1.637-2.147l2.148-1.074a1 1 0 0 0 .546-1.146 9.432 9.432 0 0 0-5.422-6.388ZM12 8.25a.75.75 0 0 1 .75.75v1.233c.42.107.81.31 1.143.593l.872-.872a.75.75 0 1 1 1.06 1.06l-.872.872c.283.334.486.723.593 1.143H16.5a.75.75 0 0 1 0 1.5h-1.222a3.003 3.003 0 0 1-2.923 2.923V18a.75.75 0 0 1-1.5 0v-1.345a3.003 3.003 0 0 1-2.923-2.923H6.75a.75.75 0 0 1 0-1.5h1.222a3.003 3.003 0 0 1 2.923-2.923V9a.75.75 0 0 1 .75-.75Z" clipRule="evenodd" />
-              </svg>
-            </div>
             
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-6">
-              Refining the Future
-            </h2>
+            {/* Logo Replacement */}
+            <div className="mb-6">
+              <img 
+                src= {logoImg}
+                alt="Crucible Lusaka Logo" 
+                className="h-6 md:h-30 w-auto object-contain"
+                
+              />
+             
+            </div>
+
+            {/* School Description */}
             <p className="text-zinc-300 leading-relaxed mb-6 font-normal">
-              In metallurgy, a crucible is a vessel used to melt substances at extremely high temperatures. At TEDxCrucibleLusaka, we view the stage as that exact structural vessel.
+            Crucible Lusaka serves as our vibrant intellectual hub where students are challenged to think critically, innovate fearlessly, and develop ideas that extend far beyond traditional boundaries.
             </p>
             <p className="text-zinc-300 leading-relaxed font-normal">
-              Our speakers aren't just presenting ideas; they are submitting them to the heat of the public sphere. This event serves as a sharp call to action for the bold, the intellectual, and the curious to gather and witness the forging of new local perspectives.
+              By providing an empowering environment for young people, the school nurtures the next generation of leaders, thinkers, and changemakers as they submit their perspectives to the public stage and shape the future of the country and beyond.
             </p>
             <span className="absolute bottom-4 right-6 text-[10px] font-bold text-zinc-700 tracking-widest uppercase pointer-events-none">
               TEDx
             </span>
           </div>
 
-          {/* Right Action Graphic/Image Frame */}
-          <div className="w-full lg:w-1/2 aspect-[4/4] lg:aspect-[4/4] overflow-hidden bg-zinc-950 border border-zinc-800 shadow-2xl relative group">
+          {/* Right Action Graphic / Crucible Building Image */}
+          <div className="w-full lg:w-1/2 aspect-[4/4] overflow-hidden bg-zinc-950 border border-zinc-800 shadow-2xl relative group">
             <img 
-              src="/forge.jpg" 
-              alt="Molten metal vessel refining elements" 
+              src={crucibleBuildingImg} 
+              alt="Crucible Building" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               onError={(e) => {
                 e.target.style.display = 'none';
@@ -89,7 +94,7 @@ export default function MainContent() {
             />
             <div className="hidden absolute inset-0 bg-gradient-to-br from-zinc-900 to-black items-center justify-center p-8 text-center flex-col">
               <span className="text-ted-red text-6xl font-black opacity-30 tracking-tighter mb-2">CRUCIBLE</span>
-              <p className="text-xs text-zinc-500 tracking-widest uppercase">Visual Asset Placeholder</p>
+              <p className="text-xs text-zinc-500 tracking-widest uppercase">Crucible Building Image Placeholder</p>
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
           </div>
@@ -116,7 +121,6 @@ export default function MainContent() {
             </h2>
           </motion.div>
 
-          {/* Bento-style Animated grid */}
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -124,7 +128,7 @@ export default function MainContent() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-12 gap-6"
           >
-            {/* Card 1: Localized Innovation */}
+            {/* Card 1 */}
             <motion.div 
               variants={cardVariant}
               whileHover={{ y: -6, border: '1px solid #ff2b06' }}
@@ -138,7 +142,7 @@ export default function MainContent() {
               </div>
             </motion.div>
 
-            {/* Card 2: Intellectual Heat (Highlighted Option) */}
+            {/* Card 2 */}
             <motion.div 
               variants={cardVariant}
               whileHover={{ y: -6 }}
@@ -158,7 +162,7 @@ export default function MainContent() {
               </div>
             </motion.div>
 
-            {/* Card 3: City Vitality */}
+            {/* Card 3 */}
             <motion.div 
               variants={cardVariant}
               whileHover={{ y: -6 }}
@@ -175,7 +179,7 @@ export default function MainContent() {
               />
             </motion.div>
 
-            {/* Card 4: Collaborative Forging */}
+            {/* Card 4 */}
             <motion.div 
               variants={cardVariant}
               whileHover={{ y: -6, border: '1px solid #ff2b06' }}
@@ -187,18 +191,13 @@ export default function MainContent() {
                   Connect face-to-face with 500+ innovative thinkers, creators, and change-makers dynamic across the continent.
                 </p>
               </div>
-              <div className="absolute right-6 bottom-4 opacity-5 text-zinc-400 pointer-events-none">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-32 h-32">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94-3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
-                </svg>
-              </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* =========================================================
-          SECTION 3: SPEAKER SELECTION PROCESS (Moved Up)
+          SECTION 3: SELECTION PROCESS
          ========================================================= */}
       <section className="min-h-screen flex items-center justify-center px-6 md:px-16 lg:px-24 max-w-5xl mx-auto py-24">
         <div className="w-full">
@@ -270,7 +269,7 @@ export default function MainContent() {
       </section>
 
       {/* =========================================================
-          SECTION 4: TIMELINE / DEADLINE DATA (Moved Down)
+          SECTION 4: TIMELINE / CALL TO ACTION
          ========================================================= */}
       <section className="min-h-screen flex items-center justify-center px-6 md:px-16 lg:px-24 max-w-5xl mx-auto py-24 text-center">
         <motion.div 
@@ -310,6 +309,7 @@ export default function MainContent() {
             <motion.button 
               whileHover={{ scale: 1.05, backgroundColor: '#d00024' }}
               whileTap={{ scale: 0.96 }}
+              onClick={onApplyClick}
               className="bg-ted-red text-white text-xs font-bold px-8 py-4 tracking-widest uppercase shadow-lg cursor-pointer"
             >
               APPLY TO SPEAK

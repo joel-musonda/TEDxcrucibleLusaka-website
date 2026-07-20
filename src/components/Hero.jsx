@@ -48,11 +48,11 @@ export default function Hero() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-10 md:space-y-8 w-full lg:w-[58%] text-left lg:mb-4"
+          className="space-y-10 md:space-y-2 w-full lg:w-[58%] text-left lg:mb-4"
         >
           <motion.div 
             variants={itemVariants} 
-            className="inline-block  text-white text-[10px] font-extrabold px-3 py-8 tracking-[0.2em] uppercase"
+            className="inline-block  text-white text-[10px] font-extrabold px-3 py-4 tracking-[0.2em] uppercase"
           >
       
           </motion.div>
@@ -69,7 +69,9 @@ export default function Hero() {
             variants={itemVariants} 
             className="text-base md:text-lg text-zinc-300 font-normal leading-relaxed max-w-2xl"
           >
-            Enter the Crucible—a high-pressure catalyst for transformation. Here, raw thoughts are refined through the heat of conversation, emerging as the powerful innovations that will shape the future of Lusaka and beyond.
+             At Crucible Lusaka we believe that Africa can make a big impact on the world economy through it's rich resources, culture, diversity, and talent.
+             our mission is to transform ambitious students into pioneering
+             leaders who can solve problems that the world today. TEDxCrucibleLusaka is a platform where these young leaders share ideas of how they plan to do so.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-2">
